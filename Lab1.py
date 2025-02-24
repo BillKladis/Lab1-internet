@@ -16,7 +16,9 @@ if not url.startswith("https://"):
     url= "https://" + url
 print(url)
 
-
 with requests.get(url) as response:
-    print(response.text)
 
+    print(f"Server{response.headers.get('Server')}")
+    print(f"Cookies:{'Set-Cookies' in response.headers}")
+    for cookies in response.cookies:
+        print(f"Name: {cookies.name}")
