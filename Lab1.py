@@ -11,4 +11,7 @@ def more(text):
                 break
 
 url = input("give url:\t")
+if not url.startswith("https://"):
+    url= "https://" + url
 print(url)
+
