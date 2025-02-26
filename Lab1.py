@@ -22,3 +22,4 @@ with requests.get(url) as response:
     print(f"Cookies:{'Set-Cookies' in response.headers}")
     for cookies in response.cookies:
         print(f"Name: {cookies.name}")
+        print(f"Expiration:{cookies.expires}\n")
